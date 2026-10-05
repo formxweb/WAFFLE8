@@ -50,7 +50,11 @@ for (const name of which === 'both' ? ['mobile', 'desktop'] : [which]) {
     await page.evaluate((yy) => window.scrollTo({ top: yy, behavior: 'instant' }), y);
     // let lazy images decode and the rAF loop settle
     await page.waitForTimeout(450);
-    await page.evaluate(() => Promise.all([...document.images].filter((i) => i.getBoundingClientRect().top < innerHeight * 1.5).map((i) => (i.complete ? null : new Promise((r) => { i.onload = i.onerror = r; })))));
+    // wait for visible images to decode, but never hang on lazy images the browser has not requested
+    await page.evaluate(() => Promise.race([
+      Promise.all([...document.images].filter((i) => { const r = i.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }).map((i) => (i.complete ? null : i.decode().catch(() => null)))),
+      new Promise((r) => setTimeout(r, 2500)),
+    ]));
     await page.waitForTimeout(250);
     await page.screenshot({ path: `${out}/${name}-${String(y).padStart(5, '0')}.png` });
   }

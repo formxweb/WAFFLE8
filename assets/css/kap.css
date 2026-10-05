@@ -931,10 +931,10 @@ body[data-chapter="kapris"].ink-light { --ink: var(--krema); --accent: var(--kre
 @media (min-width: 900px) {
   .mono { font-size: 12.5px; }
 
-  .kapak__stage { --mw: min(46vw, 78svh); }
-  .kapak__mascot { left: 66%; bottom: calc(var(--mw) * -0.1); }
-  .kapak__disc { left: 66%; }
-  .kapak__slogan { top: auto; bottom: 16svh; right: 46%; font-size: clamp(90px, 10.4vw, 220px); }
+  .kapak__stage { --mw: min(48vw, 84svh); }
+  .kapak__mascot { left: 72%; bottom: calc(var(--mw) * -0.12); }
+  .kapak__disc { left: 72%; }
+  .kapak__slogan { top: 50%; bottom: auto; right: auto; transform-origin: 0 50%; translate: 0 -50%; font-size: clamp(84px, 9.1vw, 200px); }
   .kapak__cue { right: auto; left: var(--gutter); top: 22svh; writing-mode: horizontal-tb; }
   .kapak__meta { right: auto; color: var(--bitter); text-shadow: none; bottom: 5svh; }
 
@@ -949,6 +949,7 @@ body[data-chapter="kapris"].ink-light { --ink: var(--krema); --accent: var(--kre
   .vessel--2 { --w: 34vw; grid-column: 8 / 13; margin: 22vh 0 0 -2vw; }
   .vessel--3 { --w: 42vw; grid-column: 3 / 10; margin: -6vh 0 0; }
   .vessel figcaption { margin-top: -4vw; }
+  .vessel__name { font-size: clamp(54px, 6.6vw, 120px); white-space: nowrap; }
 
   .eclairs { gap: 0; }
   .eclair { display: grid; grid-template-columns: repeat(12, 1fr); align-items: center; min-height: 34vw; }
