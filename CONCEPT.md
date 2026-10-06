@@ -53,19 +53,22 @@ Kalp maskotun başından ayrılıyor, yolculuk boyunca KAP'ın üstünde işaret
 
 ## 4. Kaydırma hikâyesi (ritim)
 
-| # | Sahne | Ritim | Ne oluyor |
-|---|---|---|---|
-| 1 | **KAPAK** | yavaş | Ekran boyunda maskot. Kapak nefes alır gibi aralanıp kapanıyor, içeride waffle'ın altın rengi görünüyor. Kaydırınca kapak kalkıyor, kalp uçuyor, kabın ağzı ekranı yutuyor ve fotoğrafın içine düşülüyor. |
-| 2 | **KAP** | keşif | Sözlük maddesi gibi açılan bir giriş. Maskot silüetli pencerelerde makro dokular var. Pencereler kaydırdıkça aşağıdan yukarı doluyor. |
-| 3 | **KAPRİS** | vuruş | Ekler kapsülleri ekrandan taşıyor. Arka plan, ortadaki eklerin sos rengine boyanıyor. Dokununca bir lokma alınıyor. |
-| 4 | **KAPIŞ KAPIŞ** | vuruş | Instagram'daki kara tahta yeşili. Kova dairesi bölüm sınırını delip üstteki sahneye taşıyor. Dev "250" rakamının önünde kaydırmayla dönüyor. |
-| 5 | **KAPAK OLSUN** | marka anı | Özel gün pastası argo bir son söz olarak sunuluyor. Sipariş DM'den. |
-| 6 | **KAPI** | konum | Yan yana iki kapı, iki şube. Kapı canlı: açıksa aralık duruyor, kapalıysa KAPALI yazıyor ve içeride maskot uyuyor. |
-| 7 | **KAP!** | eylem | Kalp maskota dönüyor. Yol tarifi o an açık olan şubeye gidiyor. Sayfanın dibi, maskotun gövdesindeki pembe bant. |
+| # | Sahne | Ritim | Ne oluyor | İmza hareketi |
+|---|---|---|---|---|
+| 1 | **KAPAK** | yavaş | **CUPİSTAN**, markanın kendi hashtag'i gibi **KAPİSTAN**'a dönüp duruyor. Kaydırınca KAP hecesi köşeye uçup omurga oluyor (sistem markanın adından doğuyor). Kalp de onunla gidiyor. Kapak kalkıyor, kamera kabın ağzına dalıyor: çizilmiş kenar açılıp yukarıdan görülen gerçek bir kaba dönüşüyor. | isim → omurga, çizim → fotoğraf |
+| 2 | **KAP** | keşif | Sözlük maddesinin tam hali yalnızca burada var. Üç ürün maskotun gövde silüetinde ve üçü de farklı ölçekte: biri dev, biri küçük, biri ekrandan taşıyor. Kaydırdıkça aşağıdan doluyorlar. | kaplar doluyor |
+| 3 | **KAPRİS** | vuruş | Instagram'daki ekler gönderileri canlanıyor: tek bir krema tabağına dört ekler sırayla düşüp eziliyor. Arka plan inen eklerin sosuna boyanıyor. Fiş, inen her ekleri satır satır basıyor. | ekler konuyor, fiş basılıyor |
+| 4 | **KAPIŞ KAPIŞ** | vuruş | Kara tahta. Kova bölüm sınırını delip üstteki sahneye taşıyor, sapından sallanıyor. KAPIŞ kovanın etiketi, ikinci KAPIŞ ayağının dibinde. 250₺. | kova sallanıyor |
+| 5 | **KAPAK OLSUN** | marka anı | Önce pasta görünüyor, sonra kutunun kapağı üstüne kapanıyor. Kapağın yüzünde KAPAK OLSUN yazıyor, mühür DM düğmesi. Açılıştaki kapağın karşılığı. | kapak kapanıyor |
+| 6 | **KAPI** | konum | Yan yana iki kapı, saat tabelalarda. Açık kapı aralık duruyor, yere ışık düşüyor. Kapalı kapının lomboz camından uyuyan maskot görünüyor. | kapı aralanıyor |
+| 7 | **KAP!** | eylem | Kalp son kaba dönüyor. Kabın pembe bandı sayfanın dibi oluyor: yol tarifi, DM ve Instagram bu bandın üstüne kap kılıfı gibi basılı. | kalp eve dönüyor |
 
-**Kaydırmayı durduran iki kompozisyon anı:**
-1. Kabın ağzının ekranı yutması. Bir sayfadan diğerine geçilmiyor, bir şeyin içine giriliyor.
-2. Kova'nın bir önceki sahneye taşması. Ürün bölümün sınırına sığmıyor.
+**Kaydırmayı durduran üç kompozisyon anı:**
+1. Çizilmiş kabın ağzının gerçek bir kaba dönüşmesi.
+2. Kovanın bir önceki sahneye taşması.
+3. Kapağın pastanın üstüne kapanması.
+
+**Fotoğraf kuralı:** Her ürün servis edildiği kabın silüetinde görünüyor: kap tatlı maskotun gövdesinde, ekler kendi kapsülünde, kova waffle kovada, pasta kutusunda. Bir fotoğraf display bir kelimenin üstüne binebilir, gövde metninin üstüne asla binmez.
 
 ## 5. Renk hiyerarşisi (ekran görüntüsünden ölçüldü)
 
@@ -86,6 +89,7 @@ Lüks için koyu bir zemin kullanmıyoruz. Pahalı görünen şey markanın kiş
 
 ## 6. Tipografi
 
+- **Ürün adları: Fraunces SOFT 600.** Ürün etiketi gibi, büyük ama sakin. Böylece Coiny yalnızca bölüm kelimeleri, wordmark ve 250 için kalıyor ve hiyerarşi bozulmuyor.
 - **Display: Coiny.** KAP omurgası ve ürün adları için. Hamur gibi şişkin, uçları krema gibi yuvarlak. Markanın Instagram'daki yuvarlak tipografisinin daha cesur bir hali. Türkçe karakterlerin (İ, Ş, ğ, ı) ve ₺ işaretinin tamamını taşıyor. Aday olarak denenen Bagel Fat One bu yüzden elendi.
 - **Editoryal: Fraunces (SOFT, italik).** Sözlük maddeleri ve duyusal cümleler için. Tereyağı gibi yumuşak bir serif.
 - **Mikro: DM Mono.** Saatler, fiyatlar, adresler için. Fiş ve paket servis etiketi gibi.
@@ -95,7 +99,8 @@ Gerilim, şişkin hamur harfleriyle ince fiş yazısının çarpışmasından ge
 ## 7. Etkileşim dili: "Krema"
 
 - **Basma:** Her tıklanabilir şey bir kaşık krema gibi önce eziliyor, sonra taşarak geri geliyor (squash and spring).
-- **Geçiş:** Hiçbir şey fade-up ile gelmiyor. Şeyler dökülüyor (aşağıdan dolan kap), konuyor (ekler tabağa iner gibi) ya da kaşıklanıyor (bir lokma).
+- **Geçiş:** Hiçbir şey fade-up ile gelmiyor. Şeyler dökülüyor (aşağıdan dolan kap), konuyor (ekler tabağa düşüp eziliyor), kapanıyor (pasta kutusu) ya da kaşıklanıyor (bir lokma).
+- **Gece:** İki kapı da kapalıyken açılış kara tahta yeşiline dönüyor, gökyüzünde şeker serpintisi yıldızlar var ve maskot uyuyor. Durum satırı sabah kaçta açılacağını söylüyor.
 - **Zaman:** Site gerçek saatle yaşıyor (Europe/Istanbul). Saat 22:00'de Çarşı kapalı, Osman Yılmaz açık. Ana eylem her zaman o an açık olan kapıya gidiyor.
 
 ## 8. "Müşteri bundan nefret eder" testi
@@ -103,3 +108,14 @@ Gerilim, şişkin hamur harfleriyle ince fiş yazısının çarpışmasından ge
 - *"Bu bizim işletmeye benzemiyor."* Benziyor: maskot, adaçayı, çilek kalp, kara tahta Kova menüsü ve markanın kendi #Kapistan şakası.
 - *"Instagram'dan ne farkı var?"* Instagram markayı gösteriyor, bu deneyim markanın dilini kullanıyor. #Kapistan bir hashtag olmaktan çıkıp bir sisteme dönüşüyor.
 - *"Başka tatlıcı kullanabilir mi?"* Hayır. Sistem, adı KAP'la başlamayan bir markada çalışmaz.
+
+## 9. Eleştiri turu (v2)
+
+İlk sürüm beş ayrı açıdan incelendi: mobil sanat yönetimi, masaüstü sanat yönetimi, etkileşim mühendisliği, marka ve kreatif direktörlük, UX ve erişilebilirlik. Her eleştiri ekran görüntüsüyle kanıtlandı. Değişenler:
+
+- Marka adı artık ilk ekranda. Açılış, standart "solda başlık, sağda görsel" düzeninden çıkarıldı: masaüstünde kap kendi adının önünde duran bir poster.
+- Sözlük bloğu her bölümün şablonuydu, artık yalnızca KAP'ta var. Diğer bölümlerde tanım bir nesnenin üstünde: KAPRİS'te fişte, KAPAK OLSUN'da kutu kapağında, KAPI'da tabelada.
+- Ürünler zikzak sıralar yerine Instagram'daki gibi tek tabakta. Kartlar ve hap biçimli CTA'lar kalktı. Eylemler kap kılıfındaki satırlar olarak duruyor.
+- Fotoğraflar daha yüksek çözünürlükte yeniden kırpıldı. Kova artık gerçekten waffle gösteriyor. Kaşık arka planından ayrıldı. Fotoğraf yazının üstüne binmiyor.
+- Hatalar düzeltildi: omurganın Ş harfini kesmesi, hızlı kaydırmada eklerin üst üste binmesi, ilk ekranda okunamayan durum satırı, masaüstünde 250₺'nin kırpılması, odak tuzağı ve kontrast.
+- Yazı tipleri 584 KB'tan 162 KB'a indi.

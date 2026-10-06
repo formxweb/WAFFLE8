@@ -4,40 +4,65 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CUPISTAN · Kap bi mutluluk · Gebze</title>
-<meta name="description" content="Cupistan #Kapistan. Gebze'de kap tatlı, ekler, dondurma, magnolya ve kova waffle. Hacıhalil Çarşı 12:30–21:30, Osman Yılmaz 10:00–01:00 (Cuma–Cumartesi 02:00).">
+<meta name="description" content="Cupistan #Kapistan. Gebze'de kap tatlı, ekler, dondurma, magnolya ve kova waffle. Hacıhalil Çarşı 12:30–21:30, Osman Yılmaz 10:00–01:00 (cuma ve cumartesi 02:00).">
 <meta name="theme-color" content="#F8E8D6">
+<link rel="canonical" href="https://cupistan.com/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="CUPISTAN">
+<meta property="og:url" content="https://cupistan.com/">
 <meta property="og:title" content="CUPISTAN · Kap bi mutluluk">
 <meta property="og:description" content="Kapağı kaldır. Gebze'de iki kapı, bir sürü kap.">
-<meta property="og:image" content="assets/og.jpg">
+<meta property="og:image" content="https://cupistan.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cupistan maskotu: tepesinde krema ve kalp olan bir kap. Kap bi mutluluk, Gebze.">
 <meta property="og:locale" content="tr_TR">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cupistan.com/assets/og.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="assets/fonts/coiny-normal-latin-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/coiny-normal-latin-ext-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/fonts.css">
-<link rel="stylesheet" href="assets/css/kap.css">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/coiny-tr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css?v=2">
+<link rel="stylesheet" href="assets/css/kap.css?v=2">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Cupistan",
-  "alternateName": "Kapistan",
-  "slogan": "Kap bi mutluluk",
-  "sameAs": ["https://www.instagram.com/cupistantr/"],
-  "subOrganization": [
+  "@graph": [
     {
-      "@type": "FoodEstablishment",
+      "@type": "Organization",
+      "@id": "https://cupistan.com/#org",
+      "name": "Cupistan",
+      "alternateName": "Kapistan",
+      "slogan": "Kap bi mutluluk",
+      "url": "https://cupistan.com/",
+      "logo": "https://cupistan.com/apple-touch-icon.png",
+      "image": "https://cupistan.com/assets/og.jpg",
+      "sameAs": ["https://www.instagram.com/cupistantr/"]
+    },
+    {
+      "@type": ["Bakery", "IceCreamShop"],
+      "@id": "https://cupistan.com/#carsi",
       "name": "Cupistan · Çarşı",
-      "servesCuisine": ["Tatlı", "Ekler", "Dondurma", "Waffle"],
+      "parentOrganization": {"@id": "https://cupistan.com/#org"},
+      "url": "https://cupistan.com/#kapi",
+      "image": "https://cupistan.com/assets/og.jpg",
+      "servesCuisine": ["Tatlı", "Ekler", "Dondurma", "Magnolya", "Waffle"],
+      "menu": "https://cupistan.com/#icindekiler",
       "address": {"@type": "PostalAddress", "streetAddress": "Hacıhalil Çarşı", "addressLocality": "Gebze", "addressRegion": "Kocaeli", "addressCountry": "TR"},
       "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "12:30", "closes": "21:30"}]
     },
     {
-      "@type": "FoodEstablishment",
+      "@type": ["Bakery", "IceCreamShop"],
+      "@id": "https://cupistan.com/#osman-yilmaz",
       "name": "Cupistan · Osman Yılmaz",
-      "servesCuisine": ["Tatlı", "Ekler", "Dondurma", "Waffle"],
+      "parentOrganization": {"@id": "https://cupistan.com/#org"},
+      "url": "https://cupistan.com/#kapi",
+      "image": "https://cupistan.com/assets/og.jpg",
+      "servesCuisine": ["Tatlı", "Ekler", "Dondurma", "Magnolya", "Waffle"],
+      "menu": "https://cupistan.com/#icindekiler",
+      "hasMap": "https://www.google.com/maps/dir/?api=1&destination=Cupistan%2C%20%C4%B0lyas%20Uzuner%20Cd.%20No%3A15%2FA%2C%20Gebze%2C%20Kocaeli",
       "address": {"@type": "PostalAddress", "streetAddress": "İlyas Uzuner Cd. No:15/A, Osman Yılmaz Mah.", "addressLocality": "Gebze", "addressRegion": "Kocaeli", "addressCountry": "TR"},
       "openingHoursSpecification": [
         {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"], "opens": "10:00", "closes": "01:00"},
@@ -52,42 +77,48 @@
 
 <a class="skip" href="#kap">İçeriğe geç</a>
 
-<!-- ═══ The spine: one syllable that never leaves the screen ═══ -->
+<!-- ═══ The spine: one syllable that never leaves the screen.
+     It is born from the wordmark when the lid lifts. ═══ -->
 <header class="spine">
-  <a class="spine__word" href="#icindekiler" data-toc-open aria-label="İçindekiler: KAP sözlüğü">
+  <button class="spine__word" type="button" data-toc-open aria-haspopup="dialog" aria-controls="icindekiler" aria-expanded="false" aria-label="KAPAK, içindekiler">
     <span class="spine__root">KAP</span><span class="spine__suffix" aria-hidden="true"><span>AK</span></span>
-  </a>
+    <span class="spine__hint" aria-hidden="true">içindekiler</span>
+  </button>
   <a class="spine__status" href="#kapi" data-status-pill>
-    <i class="dot"></i><span class="spine__state" data-status-short>Gebze</span><small data-status-until></small>
+    <i class="dot"></i><span data-status-short>Gebze</span><small data-status-until>iki kapı</small>
   </a>
 </header>
 
-<!-- the one heart: leaves the cup at the start, comes back at the door -->
+<!-- the one heart: leaves the cup at the start, comes back to the last cup -->
 <svg class="heart" id="heart" viewBox="0 0 48 44" aria-hidden="true"><path d="M24,41 C24,41 3,28 3,14 C3,5 11,0 17,3 C20.5,4.5 23,7.5 24,10 C25,7.5 27.5,4.5 31,3 C37,0 45,5 45,14 C45,28 24,41 24,41 Z"/></svg>
 
-<!-- the cup in your pocket: tap to see what's inside -->
-<button class="cupbtn" type="button" data-toc-toggle aria-controls="icindekiler" aria-expanded="false">
-  <span class="cupbtn__label">içindekiler</span>
+<!-- the cup in your pocket: tap it to see what's inside -->
+<button class="cupbtn" type="button" data-toc-toggle aria-controls="icindekiler" aria-expanded="false" aria-label="İçindekiler: menü, saatler, yol tarifi">
+  <span class="cupbtn__label" aria-hidden="true"><span class="cupbtn__open">menü · saatler</span><span class="cupbtn__close">kapat</span></span>
   <span class="cupbtn__cup" data-mascot-clone></span>
 </button>
 
 <main>
 
 <!-- ═══════════════ 01 · KAPAK ═══════════════ -->
-<section class="ch kapak" id="kapak" data-ch="kapak" data-suffix="AK" aria-label="Kapak">
+<section class="ch kapak" id="kapak" data-ch="kapak" data-suffix="AK" aria-labelledby="kapak-title">
   <div class="kapak__stage">
+    <div class="kapak__sky" aria-hidden="true"></div>
     <div class="kapak__disc" aria-hidden="true"></div>
 
-    <h1 class="kapak__slogan">
-      <span class="sr">CUPISTAN. Cup bi mutluluk, Kap bi mutluluk.</span>
-      <span class="flip" aria-hidden="true"><span class="flip__a">Cup</span><span class="flip__b">Kap</span></span><span aria-hidden="true"> bi</span>
-      <span class="kapak__line2" aria-hidden="true">mutluluk</span>
+    <div class="kapak__top">
+    <h1 class="wm" id="kapak-title">
+      <span class="sr">CUPISTAN, Gebze. Cup bi mutluluk, Kap bi mutluluk.</span>
+      <span class="wm__word" aria-hidden="true"><span class="wm__root"><span class="flip"><span class="flip__a">CUP</span><span class="flip__b">KAP</span></span></span><span class="wm__rest">İSTAN</span></span>
     </h1>
+    <p class="kapak__sl" aria-hidden="true"><span class="ln"><span class="c1">Cup</span> <span class="c2">bi</span> mutluluk <span class="hinge">~♥~</span></span> <span class="ln"><span class="c1">Kap</span> <span class="c2">bi</span> mutluluk</span></p>
+    <p class="kapak__status"><i class="dot"></i><span data-status-line>Gebze · iki kapı</span></p>
+    </div>
 
     <div class="kapak__inside" aria-hidden="true">
-      <img src="assets/photo/kap-ici-900.webp" srcset="assets/photo/kap-ici-900.webp 900w, assets/photo/kap-ici-1600.webp 1600w" sizes="100vmax" alt="" fetchpriority="high">
+      <img src="assets/photo/kap-ici-900.webp" srcset="assets/photo/kap-ici-900.webp 900w, assets/photo/kap-ici-1600.webp 1600w, assets/photo/kap-ici-2400.webp 2400w" sizes="150vmax" alt="" decoding="async">
     </div>
-    <div class="kapak__ring" aria-hidden="true"></div>
+    <svg class="kapak__ring" aria-hidden="true"><ellipse cx="0" cy="0" rx="10" ry="10"/></svg>
 
     <div class="kapak__mascot" data-mascot-root>
       <svg class="mascot" viewBox="0 0 240 240" role="img" aria-label="Cupistan'ın maskotu: tepesinde krema ve kalp olan gülümseyen bir kap">
@@ -119,7 +150,7 @@
           </g>
           <path class="m-mouth" d="M110,170 Q120,180 130,170" fill="none" stroke="#3A2A22" stroke-width="4.5" stroke-linecap="round"/>
           <ellipse class="m-mouth-o" cx="120" cy="176" rx="6" ry="7.5" fill="#3A2A22"/>
-          <g class="m-zz" fill="#66604D" font-family="Coiny, sans-serif"><text x="186" y="104" font-size="22">z</text><text x="202" y="84" font-size="30">Z</text></g>
+          <g class="m-zz" fill="#66604D" font-family="Coiny, sans-serif"><text x="30" y="158" font-size="20">z</text><text x="16" y="138" font-size="28">Z</text></g>
         </g>
         <g class="m-lid" stroke="#66604D" stroke-width="6" stroke-linejoin="round">
           <path d="M44,124 C30,123 30,103 45,100 C43,87 60,80 71,87 C78,77 96,77 102,86 C110,76 131,76 139,86 C146,77 165,78 170,88 C181,81 198,88 195,101 C210,104 209,124 195,124 C183,130 163,126 152,128 C137,133 104,133 89,128 C78,125 58,130 44,124 Z" fill="#FFF9F0"/>
@@ -132,9 +163,8 @@
       </svg>
     </div>
 
-    <p class="kapak__meta mono"><span>Gebze</span><span>iki kapı</span><span data-status-line>kap tatlı · ekler · dondurma · magnolya · waffle</span></p>
-    <p class="kapak__cue mono" aria-hidden="true">kapağı kaldır <span class="cue-arrow">↓</span></p>
-    <p class="kapak__caption mono" aria-hidden="true">kabın içi · krema, çilek sosu · kaşığı daldır</p>
+    <p class="kapak__cue mono" aria-hidden="true"><span class="cue-arrow">↓</span> kaydır, kapağı kaldır</p>
+    <p class="kapak__caption mono" aria-hidden="true">kabın içi: krema, çilek sosu</p>
   </div>
 </section>
 
@@ -142,300 +172,298 @@
 <section class="ch kap" id="kap" data-ch="kap" data-suffix="" aria-labelledby="kap-word">
   <svg class="edge edge--drip" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,58 C60,58 70,96 112,96 C150,96 150,50 210,46 C276,42 282,104 334,104 C380,104 382,40 452,36 C520,32 520,82 572,82 C618,82 626,30 700,28 C770,26 774,110 828,110 C874,110 874,44 940,40 C1004,36 1012,88 1060,88 C1104,88 1110,34 1180,32 C1246,30 1250,100 1302,100 C1350,100 1360,52 1440,50 L1440,120 Z"/></svg>
 
-  <header class="entry entry--kap">
-    <h2 class="entry__word" id="kap-word">KAP</h2>
+  <header class="entry">
+    <h2 class="entry__word" id="kap-word">KAP<span class="sr">: kap tatlı, magnolya, dondurma</span></h2>
     <p class="entry__meta mono">isim · /kap/ · çoğulu: kaplar</p>
     <ol class="entry__defs">
       <li>İçine bir şey konan şey.</li>
-      <li><em>Cupistan'da:</em> içine mutluluk konan şey. Biz ikinci anlamı kullanıyoruz.</li>
+      <li><em>Cupistan'da:</em> içine mutluluk konan şey. Biz ikincisinden anlarız.</li>
     </ol>
   </header>
 
   <div class="vessels">
     <figure class="vessel vessel--1" data-fill>
       <div class="vessel__cup">
-        <div class="vessel__mask"><img src="assets/photo/magnolya-700.webp" srcset="assets/photo/magnolya-700.webp 700w, assets/photo/magnolya-1200.webp 1200w" sizes="(min-width: 900px) 40vw, 82vw" alt="Kat kat çilek, muz ve kremadan bir kap tatlı" loading="lazy" decoding="async"></div>
+        <div class="vessel__mask"><img src="assets/photo/magnolya-700.webp" srcset="assets/photo/magnolya-700.webp 700w, assets/photo/magnolya-1200.webp 1200w" sizes="(min-width: 900px) 40vw, 76vw" alt="Kat kat çilek, muz ve kremadan bir magnolya" loading="lazy" decoding="async"></div>
         <svg class="vessel__line" viewBox="0 0 200 160" aria-hidden="true"><use href="#cup-line"/></svg>
+        <span class="vessel__no mono" aria-hidden="true">kap 01</span>
       </div>
       <figcaption>
-        <span class="vessel__no mono">kap 01</span>
-        <b class="vessel__name">Magnolya</b>
-        <span class="vessel__say">Kat kat: bisküvi, krema, meyve. Kaşık dibe değmeden bitmez.</span>
+        <h3 class="vessel__name">Magnolya</h3>
+        <span class="vessel__say">Kat kat: bisküvi, krema, meyve. Kaşık dibe vurmadan bırakılmaz.</span>
       </figcaption>
     </figure>
 
     <figure class="vessel vessel--2" data-fill>
       <div class="vessel__cup">
-        <div class="vessel__mask"><img src="assets/photo/dondurma-fistik-600.webp" srcset="assets/photo/dondurma-fistik-600.webp 600w, assets/photo/dondurma-fistik-800.webp 800w" sizes="(min-width: 900px) 28vw, 62vw" alt="Yakından fıstıklı dondurma topu, arkasında çilekli" loading="lazy" decoding="async"></div>
+        <div class="vessel__mask"><img src="assets/photo/dondurma-600.webp" srcset="assets/photo/dondurma-600.webp 600w, assets/photo/dondurma-900.webp 900w" sizes="(min-width: 900px) 22vw, 46vw" alt="Yakından yeşil ve kırmızı dondurma topları" loading="lazy" decoding="async"></div>
         <svg class="vessel__line" viewBox="0 0 200 160" aria-hidden="true"><use href="#cup-line"/></svg>
+        <span class="vessel__no mono" aria-hidden="true">kap 02</span>
       </div>
       <figcaption>
-        <span class="vessel__no mono">kap 02</span>
-        <b class="vessel__name">Dondurma</b>
-        <span class="vessel__say">Fıstıklısı tam bizim yeşilimiz. Tesadüf değil.</span>
+        <h3 class="vessel__name">Dondurma</h3>
+        <span class="vessel__say">Top top, kap kap. Bir top hep az gelir.</span>
       </figcaption>
     </figure>
 
     <figure class="vessel vessel--3" data-fill>
       <div class="vessel__cup">
-        <div class="vessel__mask"><img src="assets/photo/kap-tatli-700.webp" srcset="assets/photo/kap-tatli-700.webp 700w, assets/photo/kap-tatli-1200.webp 1200w" sizes="(min-width: 900px) 34vw, 74vw" alt="Yukarıdan bakış: kakaolu kap tatlılar, üzerlerinde çilek ve yaban mersini" loading="lazy" decoding="async"></div>
+        <div class="vessel__mask"><img src="assets/photo/kap-tatli-700.webp" srcset="assets/photo/kap-tatli-700.webp 700w, assets/photo/kap-tatli-1200.webp 1200w" sizes="(min-width: 900px) 42vw, 100vw" alt="Yukarıdan bakış: kakaolu kap tatlılar, üzerlerinde çilek ve yaban mersini" loading="lazy" decoding="async"></div>
         <svg class="vessel__line" viewBox="0 0 200 160" aria-hidden="true"><use href="#cup-line"/></svg>
+        <span class="vessel__no mono" aria-hidden="true">kap 03</span>
       </div>
       <figcaption>
-        <span class="vessel__no mono">kap 03</span>
-        <b class="vessel__name">Kap tatlı</b>
-        <span class="vessel__say">Tepeden bakınca hepsi aynı kap. Kaşığı daldırınca değil.</span>
+        <h3 class="vessel__name">Kap tatlı</h3>
+        <span class="vessel__say">Tepeden bakınca hepsi aynı. Kaşığı daldırınca anlarsın.</span>
       </figcaption>
     </figure>
   </div>
-
-  <figure class="bleed" data-bleed>
-    <img src="assets/photo/krema-cilek-900.webp" srcset="assets/photo/krema-cilek-900.webp 900w, assets/photo/krema-cilek-1600.webp 1600w" sizes="100vw" alt="Çırpılmış kremanın içine batırılmış taze çilek dilimleri, çok yakından" loading="lazy" decoding="async">
-    <figcaption class="mono">tepesi krema · gerisi kabın sırrı</figcaption>
-  </figure>
 </section>
 
-<!-- ═══════════════ 03 · KAPRİS ═══════════════ -->
+<!-- ═══════════════ 03 · KAPRİS: the vitrine plate ═══════════════ -->
 <section class="ch kapris" id="kapris" data-ch="kapris" data-suffix="RİS" aria-labelledby="kapris-word">
   <svg class="edge edge--glaze" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,64 C180,64 220,22 380,22 C560,22 600,78 780,78 C960,78 1000,30 1160,30 C1300,30 1340,58 1440,58 L1440,120 Z"/></svg>
 
-  <header class="entry entry--kapris">
-    <h2 class="entry__word" id="kapris-word" aria-label="KAPRİS">KAPR<span class="i-heart" aria-hidden="true">I</span>S</h2>
-    <p class="entry__meta mono">isim · /kap·ris/ · Fransızca caprice'ten</p>
-    <ol class="entry__defs">
-      <li>Sebebi olmayan istek.</li>
-      <li><em>Cupistan'da:</em> eklerin rengini seçmek. Vitrin her gün başka kapris.</li>
-    </ol>
-  </header>
+  <div class="kapris__stage">
+    <div class="glaze" aria-hidden="true"><i style="--g:#F2A8B8"></i><i style="--g:#DDE3B8"></i><i style="--g:#D9B48F"></i><i style="--g:#B52E35"></i></div>
 
-  <div class="eclairs">
-    <figure class="eclair" data-eclair data-color="#F2A8B8" data-ink="#3A2A22" data-from="-1" style="--rot:-5deg">
-      <b class="eclair__name">Çilek</b>
-      <button class="eclair__pill" type="button" aria-label="Çilekli eklerden bir lokma al">
-        <img src="assets/photo/ekler-cilek-700.webp" width="700" height="269" srcset="assets/photo/ekler-cilek-700.webp 700w, assets/photo/ekler-cilek-1300.webp 1300w" sizes="(min-width: 900px) 62vw, 118vw" alt="Pembe çilek kaplamalı, çizgili ekler" loading="lazy" decoding="async">
-        <span class="bites" aria-hidden="true"></span>
+    <!-- the receipt: the chapter's definition, printing the vitrine as it fills -->
+    <div class="fis">
+      <h2 class="fis__word" id="kapris-word"><span class="sr">KAPRİS: günün ekleri</span><span aria-hidden="true">KAPR<span class="i-heart">I</span>S</span></h2>
+      <p class="fis__meta mono">isim · <span lang="fr">caprice</span>'ten</p>
+      <p class="fis__def">Sebebi olmayan istek. <em>Cupistan'da:</em> eklerin rengini seçmek.</p>
+      <ol class="fis__list mono">
+        <li data-line="0"><b>01 pembe</b><span>çizgili kaplama</span></li>
+        <li data-line="1"><b>02 yeşil</b><span>fıstık kırıntılı</span></li>
+        <li data-line="2"><b>03 kahve</b><span>kakao kırıntılı</span></li>
+        <li data-line="3"><b>04 kırmızı</b><span>parlak kaplama</span></li>
+      </ol>
+      <p class="fis__total mono"><b>bugün</b><span>vitrinde ne varsa</span></p>
+      <p class="fis__hint mono" data-bite-hint>dokun: bir lokma</p>
+    </div>
+
+    <div class="plate" aria-hidden="true"></div>
+
+    <div class="eclairs">
+      <button class="eclair" type="button" data-eclair="0" data-color="#F2A8B8" aria-label="Pembe çizgili eklerden bir lokma al" style="--x:41%;--y:43%;--r:-14deg">
+        <img src="assets/photo/ekler-pembe-800.webp" srcset="assets/photo/ekler-pembe-800.webp 800w, assets/photo/ekler-pembe-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 78vw" width="800" height="308" alt="Pembe, çizgili kaplamalı ekler" loading="lazy" decoding="async">
       </button>
-      <figcaption class="mono">01 · pembe kaplama, çizgili <span class="eclair__hint">dokun: bir lokma</span></figcaption>
-    </figure>
-    <figure class="eclair" data-eclair data-color="#C9D39E" data-ink="#2F4338" data-from="1" style="--rot:4deg">
-      <b class="eclair__name">Fıstık</b>
-      <button class="eclair__pill" type="button" aria-label="Fıstıklı eklerden bir lokma al">
-        <img src="assets/photo/ekler-fistik-700.webp" width="700" height="280" srcset="assets/photo/ekler-fistik-700.webp 700w, assets/photo/ekler-fistik-1400.webp 1400w" sizes="(min-width: 900px) 62vw, 118vw" alt="Yeşil fıstık kırıntılı, üstünde krema damlaları olan ekler" loading="lazy" decoding="async">
-        <span class="bites" aria-hidden="true"></span>
+      <button class="eclair" type="button" data-eclair="1" data-color="#DDE3B8" aria-label="Yeşil fıstık kırıntılı eklerden bir lokma al" style="--x:61%;--y:56%;--r:-22deg">
+        <img src="assets/photo/ekler-yesil-800.webp" srcset="assets/photo/ekler-yesil-800.webp 800w, assets/photo/ekler-yesil-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 78vw" width="800" height="308" alt="Fıstık kırıntılı yeşil ekler" loading="lazy" decoding="async">
       </button>
-      <figcaption class="mono">02 · fıstık kırıntısı, krema damlası</figcaption>
-    </figure>
-    <figure class="eclair" data-eclair data-color="#5A3626" data-ink="#F8E8D6" data-from="-1" style="--rot:-3deg">
-      <b class="eclair__name">Bitter</b>
-      <button class="eclair__pill" type="button" aria-label="Bitter çikolatalı eklerden bir lokma al">
-        <img src="assets/photo/ekler-bitter-700.webp" width="700" height="221" srcset="assets/photo/ekler-bitter-700.webp 700w, assets/photo/ekler-bitter-1400.webp 1400w" sizes="(min-width: 900px) 62vw, 118vw" alt="Kakaolu kırıntıyla kaplı bitter çikolatalı ekler" loading="lazy" decoding="async">
-        <span class="bites" aria-hidden="true"></span>
+      <button class="eclair" type="button" data-eclair="2" data-color="#D9B48F" aria-label="Kakao kırıntılı eklerden bir lokma al" style="--x:38%;--y:68%;--r:-9deg">
+        <img src="assets/photo/ekler-kahve-800.webp" srcset="assets/photo/ekler-kahve-800.webp 800w, assets/photo/ekler-kahve-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 78vw" width="800" height="308" alt="Kakao kırıntılı, krema damlalı ekler" loading="lazy" decoding="async">
       </button>
-      <figcaption class="mono">03 · kakao kırıntısı, karamel nokta</figcaption>
-    </figure>
-    <figure class="eclair" data-eclair data-color="#E9555A" data-ink="#FFF9F0" data-from="1" style="--rot:5deg">
-      <b class="eclair__name">Frambuaz</b>
-      <button class="eclair__pill" type="button" aria-label="Frambuazlı eklerden bir lokma al">
-        <img src="assets/photo/ekler-frambuaz-700.webp" width="700" height="280" srcset="assets/photo/ekler-frambuaz-700.webp 700w, assets/photo/ekler-frambuaz-1000.webp 1000w" sizes="(min-width: 900px) 62vw, 118vw" alt="Parlak kırmızı frambuaz kaplamalı, beze süslü ekler" loading="lazy" decoding="async">
-        <span class="bites" aria-hidden="true"></span>
+      <button class="eclair" type="button" data-eclair="3" data-color="#B52E35" aria-label="Kırmızı parlak kaplamalı eklerden bir lokma al" style="--x:60%;--y:80%;--r:-17deg">
+        <img src="assets/photo/ekler-kirmizi-800.webp" srcset="assets/photo/ekler-kirmizi-800.webp 800w, assets/photo/ekler-kirmizi-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 78vw" width="800" height="308" alt="Parlak kırmızı kaplamalı, beze süslü ekler" loading="lazy" decoding="async">
       </button>
-      <figcaption class="mono">04 · parlak kaplama, beze</figcaption>
-    </figure>
+    </div>
+
+    <p class="kapris__after">Bugünün kaprisi vitrinde. Vitrin de <a href="https://www.instagram.com/cupistantr/" target="_blank" rel="noopener"><span lang="en">@cupistantr</span></a>'de.</p>
   </div>
-
-  <p class="kapris__after">Bugünün kaprisi vitrinde. Vitrin de <a href="https://www.instagram.com/cupistantr/" target="_blank" rel="noopener">@cupistantr</a>'de.</p>
 </section>
 
 <!-- ═══════════════ 04 · KAPIŞ KAPIŞ ═══════════════ -->
 <section class="ch kapis" id="kapis" data-ch="kapis" data-suffix="IŞ KAPIŞ" aria-labelledby="kapis-word">
-  <h2 class="sr" id="kapis-word">Kapış kapış: Kova Waffle Menü, 250 lira</h2>
-
-  <div class="kapis__type" aria-hidden="true">
-    <span class="kapis__w kapis__w--1">KAPIŞ</span>
-    <span class="kapis__w kapis__w--2">KAPIŞ</span>
-  </div>
-
   <figure class="kova" data-kova>
     <svg class="kova__handle" viewBox="0 0 400 140" aria-hidden="true"><path d="M44,138 C44,20 356,20 356,138" fill="none" stroke="#F8E8D6" stroke-width="14" stroke-linecap="round"/><circle cx="44" cy="134" r="12" fill="#2F4338" stroke="#F8E8D6" stroke-width="6"/><circle cx="356" cy="134" r="12" fill="#2F4338" stroke="#F8E8D6" stroke-width="6"/></svg>
     <div class="kova__body">
-      <img src="assets/photo/kova-700.webp" srcset="assets/photo/kova-700.webp 700w, assets/photo/kova-1200.webp 1200w" sizes="(min-width: 900px) 40vw, 88vw" alt="Waffle kasede çilekli dondurma topları, çilek sosu ve taze çilekler" loading="lazy" decoding="async">
+      <div class="kova__photo"><img src="assets/photo/kova-700.webp" srcset="assets/photo/kova-700.webp 700w, assets/photo/kova-1200.webp 1200w" sizes="(min-width: 900px) 36vw, 78vw" alt="Kovada waffle parçaları, fındık kreması, muz ve çilek" loading="lazy" decoding="async"></div>
+      <svg class="kova__line" viewBox="0 0 400 460" preserveAspectRatio="none" aria-hidden="true"><path d="M3,3 L397,3 L352,440 Q350,457 330,457 L70,457 Q50,457 48,440 Z" fill="none" stroke="#F8E8D6" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg>
+      <svg class="kova__rim" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true"><rect x="3" y="3" width="394" height="34" rx="17" fill="#F2C95C" stroke="#F8E8D6" stroke-width="6"/></svg>
+      <span class="kapis__w kapis__w--1" aria-hidden="true">KAPIŞ</span>
     </div>
-    <svg class="kova__line" viewBox="0 0 400 460" preserveAspectRatio="none" aria-hidden="true"><path d="M3,3 L397,3 L352,440 Q350,457 330,457 L70,457 Q50,457 48,440 Z" fill="none" stroke="#F8E8D6" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg>
-    <svg class="kova__rim" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true"><rect x="3" y="3" width="394" height="34" rx="17" fill="#F2C95C" stroke="#F8E8D6" stroke-width="6"/></svg>
   </figure>
+  <span class="kapis__w kapis__w--2" aria-hidden="true">KAPIŞ</span>
 
   <div class="kapis__copy">
-    <p class="entry__meta mono">zarf · /ka·pış ka·pış/ · elden ele kapılarak</p>
-    <p class="kapis__name">Kova Waffle Menü</p>
-    <p class="kapis__price" aria-label="250 lira"><span>250</span><i>₺</i></p>
-    <p class="kapis__say">Kovanın dibine kadar waffle, sos, meyve, dondurma. Siyah &amp; Beyaz'ı da var; kasada sor, kapış kapış gidiyor.</p>
+    <p class="kapis__meta mono">zarf · /ka·pış ka·pış/ · elden ele kapılarak</p>
+    <h2 class="kapis__name" id="kapis-word">Kova Waffle Menü<span class="sr">: kapış kapış gidiyor</span></h2>
+    <p class="kapis__price"><span class="sr">250 lira</span><span aria-hidden="true">250<i>₺</i></span></p>
+    <p class="kapis__say">Kovanın dibine kadar waffle; üstü sos, meyve, dondurma. Siyah &amp; Beyaz Kova da var.</p>
   </div>
 
   <figure class="kapis__close">
-    <img src="assets/photo/kova-yakin-700.webp" srcset="assets/photo/kova-yakin-700.webp 700w, assets/photo/kova-yakin-1200.webp 1200w" sizes="(min-width: 900px) 30vw, 70vw" alt="Yakından waffle parçaları, fındık kreması, muz ve çilek" loading="lazy" decoding="async">
-    <figcaption class="mono">yakından: kovanın ortası</figcaption>
+    <img src="assets/photo/kova-dondurma-600.webp" srcset="assets/photo/kova-dondurma-600.webp 600w, assets/photo/kova-dondurma-1000.webp 1000w" sizes="(min-width: 900px) 26vw, 58vw" alt="Waffle kasede pembe dondurma topları ve çilek" loading="lazy" decoding="async">
+    <figcaption class="mono">üstü: dondurma</figcaption>
   </figure>
 </section>
 
-<!-- ═══════════════ 05 · KAPAK OLSUN ═══════════════ -->
+<!-- ═══════════════ 05 · KAPAK OLSUN: the box lid shuts ═══════════════ -->
 <section class="ch olsun" id="kapak-olsun" data-ch="olsun" data-suffix="AK OLSUN" aria-labelledby="olsun-word">
   <svg class="edge edge--pipe" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0,80 L0,40 Q30,0 60,40 Q90,0 120,40 Q150,0 180,40 Q210,0 240,40 Q270,0 300,40 Q330,0 360,40 Q390,0 420,40 Q450,0 480,40 Q510,0 540,40 Q570,0 600,40 Q630,0 660,40 Q690,0 720,40 Q750,0 780,40 Q810,0 840,40 Q870,0 900,40 Q930,0 960,40 Q990,0 1020,40 Q1050,0 1080,40 Q1110,0 1140,40 Q1170,0 1200,40 Q1230,0 1260,40 Q1290,0 1320,40 Q1350,0 1380,40 Q1410,0 1440,40 L1440,80 Z"/></svg>
 
-  <header class="entry entry--olsun">
-    <h2 class="entry__word" id="olsun-word">KAPAK<br>OLSUN</h2>
-    <p class="entry__meta mono">deyim · argo · lafı bitiren son söz</p>
-    <ol class="entry__defs">
-      <li>Doğum günü, yıl dönümü, "özür dilerim".</li>
-      <li><em>Cupistan'da:</em> lafı uzatmayın, son sözü pasta söylesin.</li>
-    </ol>
-  </header>
+  <div class="olsun__intro">
+    <h2 class="sr" id="olsun-word">Kapak olsun: özel gün pastası</h2>
+    <p class="olsun__word" aria-hidden="true">KAPAK <span>OLSUN</span></p>
+    <p class="olsun__meta mono">kapak olsun · deyim · argo</p>
+    <p class="olsun__say">Doğum günü, yıl dönümü, “özür dilerim”. Lafı uzatma; son sözü pasta söylesin.</p>
+  </div>
 
-  <figure class="olsun__cake" data-tilt>
-    <img src="assets/photo/pasta-kutu-700.webp" srcset="assets/photo/pasta-kutu-700.webp 700w, assets/photo/pasta-kutu-1200.webp 1200w" sizes="(min-width: 900px) 36vw, 80vw" alt="Kapağı açık bir kutuda lila renkli, üstü yazılı küçük pasta, yanında laleler" loading="lazy" decoding="async">
-    <svg class="stamp" viewBox="0 0 200 200" aria-hidden="true">
-      <defs><path id="stamp-c" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
-      <circle cx="100" cy="100" r="96" fill="#E9555A"/>
-      <text font-family="DM Mono, monospace" font-size="15.5" letter-spacing="3.2" fill="#FFF9F0"><textPath href="#stamp-c">ÖZEL GÜN PASTASI · DM'DEN SÖYLE · ÖZEL GÜN PASTASI · </textPath></text>
-      <path d="M100,124 C100,124 80,112 80,99 C80,91 87,87 93,90 C96,91.5 98.5,94 100,96 C101.5,94 104,91.5 107,90 C113,87 120,91 120,99 C120,112 100,124 100,124 Z" fill="#FFF9F0"/>
-    </svg>
-  </figure>
-
-  <a class="act act--olsun" href="https://ig.me/m/cupistantr" target="_blank" rel="noopener"><span>Pastanı DM'den söyle</span><i aria-hidden="true">→</i></a>
+  <div class="box" data-box>
+    <div class="box__in">
+      <img src="assets/photo/pasta-kutu-700.webp" srcset="assets/photo/pasta-kutu-700.webp 700w, assets/photo/pasta-kutu-1200.webp 1200w" sizes="(min-width: 900px) 34vw, 84vw" alt="Açık bir kutuda lila renkli küçük pasta, yanında laleler" loading="lazy" decoding="async">
+    </div>
+    <div class="box__lid" aria-hidden="true">
+      <div class="box__face">
+        <p class="box__word"><span>KAPAK</span><span>OLSUN</span></p>
+        <p class="box__small mono">özel gün pastası · Cupistan</p>
+      </div>
+      <div class="box__back"></div>
+    </div>
+    <a class="seal" href="https://ig.me/m/cupistantr" target="_blank" rel="noopener">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <defs><path id="seal-c" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+        <path class="seal__wax" d="M100,6 C120,6 128,16 146,20 C164,24 176,36 182,54 C188,72 196,82 194,100 C192,120 184,128 180,146 C176,164 160,174 142,182 C124,190 116,196 100,194 C82,192 72,186 56,180 C38,174 24,162 18,144 C12,126 6,118 8,100 C10,80 16,72 22,56 C28,40 42,26 60,20 C78,14 82,6 100,6 Z"/>
+        <circle cx="100" cy="100" r="86" fill="none" stroke="#FFF9F0" stroke-width="2" stroke-dasharray="2 6" opacity=".7"/>
+        <text font-family="DM Mono, monospace" font-size="15" letter-spacing="3" fill="#FFF9F0"><textPath href="#seal-c">ÖZEL GÜN PASTASI · SİPARİŞ DM'DEN · </textPath></text>
+        <path d="M100,124 C100,124 80,112 80,99 C80,91 87,87 93,90 C96,91.5 98.5,94 100,96 C101.5,94 104,91.5 107,90 C113,87 120,91 120,99 C120,112 100,124 100,124 Z" fill="#FFF9F0"/>
+      </svg>
+      <span class="sr">Özel gün pastası için Instagram'dan DM at</span>
+    </a>
+  </div>
 </section>
 
 <!-- ═══════════════ 06 · KAPI ═══════════════ -->
 <section class="ch kapi" id="kapi" data-ch="kapi" data-suffix="I" aria-labelledby="kapi-word">
-  <header class="entry entry--kapi">
-    <h2 class="entry__word" id="kapi-word">KAPI</h2>
-    <p class="entry__meta mono">isim · Gebze'de iki tane</p>
-    <ol class="entry__defs">
-      <li>Kabın dünyaya açıldığı yer.</li>
-      <li><em>Cupistan'da:</em> biri çarşıda öğlen açılır, öbürü gece birde kapanır. Cuma ve cumartesi ikide.</li>
-    </ol>
-  </header>
+  <div class="kapi__intro">
+    <h2 class="kapi__title" id="kapi-word"><span class="sr">KAPI: şubeler ve saatler. </span>Kabın dünyaya açıldığı yer.</h2>
+    <p class="kapi__meta mono">kapı · isim · Gebze'de iki tane</p>
+  </div>
 
   <div class="doors">
     <article class="door" data-branch="carsi" style="--door:#E9555A">
-      <div class="door__frame">
-        <div class="door__awning" aria-hidden="true"></div>
+      <div class="door__art">
+        <div class="door__frame">
         <div class="door__room" aria-hidden="true"><span class="door__glow"></span><span class="door__mascot" data-mascot-clone></span></div>
-        <button class="door__leaf" type="button" aria-label="Çarşı kapısını aç">
+        <button class="door__leaf" type="button" aria-label="Çarşı kapısını aralayıp içeri bak">
           <span class="door__window"></span><span class="door__knob"></span>
-          <span class="door__sign mono" data-door-sign>…</span>
         </button>
+        <span class="door__sign mono" data-door-sign>12:30 – 21:30</span>
+        <div class="door__awning" aria-hidden="true"></div>
       </div>
-      <h3 class="door__name">Çarşı</h3>
-      <p class="door__where mono">Hacıhalil Çarşı · Gebze</p>
-      <p class="door__hours mono">her gün 12:30 – 21:30</p>
-      <p class="door__now" data-door-now></p>
-      <a class="act act--door" href="https://www.google.com/maps/search/?api=1&amp;query=Cupistan%20Hac%C4%B1halil%20%C3%87ar%C5%9F%C4%B1%20Gebze" target="_blank" rel="noopener"><span>Yol tarifi</span><i aria-hidden="true">↗</i></a>
+      <div class="door__spill" aria-hidden="true"></div>
+      </div>
+      <div class="door__info">
+        <h3 class="door__name">Çarşı</h3>
+        <p class="door__where">Hacıhalil Çarşı, Gebze</p>
+        <p class="door__hours"><span class="nw">12:30 – 21:30</span></p>
+        <p class="door__now" data-door-now></p>
+        <a class="go" data-maps="carsi" href="https://www.google.com/maps/dir/?api=1&amp;destination=Cupistan%2C%20Hac%C4%B1halil%20%C3%87ar%C5%9F%C4%B1%2C%20Gebze%2C%20Kocaeli" target="_blank" rel="noopener">Yol tarifi <i aria-hidden="true">↗</i></a>
+      </div>
     </article>
 
     <article class="door" data-branch="oy" style="--door:#929876">
-      <div class="door__frame">
-        <div class="door__awning" aria-hidden="true"></div>
+      <div class="door__art">
+        <div class="door__frame">
         <div class="door__room" aria-hidden="true"><span class="door__glow"></span><span class="door__mascot" data-mascot-clone></span></div>
-        <button class="door__leaf" type="button" aria-label="Osman Yılmaz kapısını aç">
+        <button class="door__leaf" type="button" aria-label="Osman Yılmaz kapısını aralayıp içeri bak">
           <span class="door__window"></span><span class="door__knob"></span>
-          <span class="door__sign mono" data-door-sign>…</span>
         </button>
+        <span class="door__sign mono" data-door-sign>10:00 – 01:00</span>
+        <div class="door__awning" aria-hidden="true"></div>
       </div>
-      <h3 class="door__name">Osman Yılmaz</h3>
-      <p class="door__where mono">İlyas Uzuner Cd. No:15/A · Gebze</p>
-      <p class="door__hours mono">10:00 – 01:00 · cuma, cumartesi 02:00</p>
-      <p class="door__now" data-door-now></p>
-      <a class="act act--door" href="https://www.google.com/maps/search/?api=1&amp;query=Cupistan%20%C4%B0lyas%20Uzuner%20Cd.%20No%3A15%2FA%20Gebze" target="_blank" rel="noopener"><span>Yol tarifi</span><i aria-hidden="true">↗</i></a>
+      <div class="door__spill" aria-hidden="true"></div>
+      </div>
+      <div class="door__info">
+        <h3 class="door__name">Osman Yılmaz</h3>
+        <p class="door__where">İlyas Uzuner Cd. No:15/A, Gebze</p>
+        <p class="door__hours"><span class="nw">10:00 – 01:00</span><br>cuma ve cumartesi <span class="nw">02:00'ye kadar</span></p>
+        <p class="door__now" data-door-now></p>
+        <a class="go" data-maps="oy" href="https://www.google.com/maps/dir/?api=1&amp;destination=Cupistan%2C%20%C4%B0lyas%20Uzuner%20Cd.%20No%3A15%2FA%2C%20Gebze%2C%20Kocaeli" target="_blank" rel="noopener">Yol tarifi <i aria-hidden="true">↗</i></a>
+      </div>
     </article>
   </div>
 </section>
 
 <!-- ═══════════════ 07 · KAP! ═══════════════ -->
 <section class="ch emir" id="kap-emir" data-ch="emir" data-suffix="!" aria-labelledby="emir-word">
-  <img class="emir__spoon" src="assets/photo/son-kasik-600.webp" srcset="assets/photo/son-kasik-600.webp 600w, assets/photo/son-kasik-1000.webp 1000w" sizes="(min-width: 900px) 22vw, 46vw" alt="Kaşıktan süzülen eritilmiş çikolata ve çilek" loading="lazy" decoding="async">
-
-  <header class="entry entry--emir">
-    <h2 class="entry__word" id="emir-word">KAP!</h2>
-    <p class="entry__meta mono">fiil · emir kipi · kapmak</p>
+  <header class="emir__head">
+    <h2 class="emir__word" id="emir-word">KAP!<span class="sr"> Kap bi mutluluk.</span></h2>
+    <p class="emir__meta mono">fiil · emir kipi · kapmak</p>
+    <p class="emir__line" aria-hidden="true">Kap bi mutluluk.</p>
   </header>
-
-  <p class="emir__line">Kap bi<br>mutluluk.</p>
-
+  <img class="emir__spoon" src="assets/photo/son-kasik-600.webp" srcset="assets/photo/son-kasik-600.webp 600w, assets/photo/son-kasik-1000.webp 1000w" sizes="(min-width: 900px) 16vw, 34vw" alt="" loading="lazy" decoding="async">
   <div class="emir__mascot" data-mascot-clone data-final-mascot></div>
-
-  <nav class="emir__acts" aria-label="Hemen">
-    <a class="act act--big" data-open-directions href="https://www.google.com/maps/search/?api=1&amp;query=Cupistan%20%C4%B0lyas%20Uzuner%20Cd.%20No%3A15%2FA%20Gebze" target="_blank" rel="noopener">
-      <span><small class="mono" data-open-label>yol tarifi</small>Şimdi açık kapıya git</span><i aria-hidden="true">↗</i></a>
-    <a class="act" href="https://ig.me/m/cupistantr" target="_blank" rel="noopener"><span><small class="mono">paket servis · pasta siparişi</small>DM at</span><i aria-hidden="true">→</i></a>
-    <a class="act" href="https://www.instagram.com/cupistantr/" target="_blank" rel="noopener"><span><small class="mono">günün kaprisi</small>@cupistantr</span><i aria-hidden="true">↗</i></a>
-  </nav>
 </section>
 
 </main>
 
-<!-- the bottom of the cup: its pink band -->
+<!-- the bottom of the cup: its pink band. Every action is printed on it, like a cup sleeve. -->
 <footer class="band">
   <svg class="band__edge" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 L0,8 C480,40 960,40 1440,8 L1440,40 Z"/><path d="M0,8 C480,40 960,40 1440,8" fill="none" stroke="#66604D" stroke-width="6" vector-effect="non-scaling-stroke"/></svg>
-  <p class="band__mark" aria-label="CUPİSTAN">CUP<span class="i-heart" aria-hidden="true">I</span>STAN</p>
+  <nav class="sleeve" aria-label="Hemen">
+    <a class="sleeve__row sleeve__row--go" data-open-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Cupistan%2C%20%C4%B0lyas%20Uzuner%20Cd.%20No%3A15%2FA%2C%20Gebze%2C%20Kocaeli" target="_blank" rel="noopener">
+      <small class="mono" data-open-label>yol tarifi · Osman Yılmaz</small><b data-open-text>Yol tarifi</b><i aria-hidden="true">↗</i></a>
+    <a class="sleeve__row" href="https://ig.me/m/cupistantr" target="_blank" rel="noopener"><small class="mono">paket servis · pasta siparişi</small><b>DM at</b><i aria-hidden="true">→</i></a>
+    <a class="sleeve__row" href="https://www.instagram.com/cupistantr/" target="_blank" rel="noopener"><small class="mono">vitrin her gün orada</small><b lang="en">@cupistantr</b><i aria-hidden="true">↗</i></a>
+  </nav>
+  <p class="band__mark"><span class="sr">CUPISTAN</span><span aria-hidden="true">CUP<span class="i-heart">I</span>STAN</span></p>
   <p class="band__sl">Cup bi mutluluk <span aria-hidden="true">~♥~</span> Kap bi mutluluk</p>
   <ul class="band__info mono">
     <li>#Kapistan</li>
     <li>Gebze · Kocaeli</li>
-    <li><a href="https://www.instagram.com/cupistantr/" target="_blank" rel="noopener">instagram</a></li>
-    <li>fotoğraflar: <a href="CREDITS.md">Pexels</a></li>
+    <li><a href="credits.html">fotoğraf ve yazı künyesi</a></li>
   </ul>
 </footer>
 
-<!-- ═══ İÇİNDEKİLER: what's inside the cup (menu, chapters, doors) ═══ -->
-<div class="toc" id="icindekiler" role="dialog" aria-modal="true" aria-labelledby="toc-title" hidden>
+<!-- ═══ İÇİNDEKİLER: what's inside the cup. Rendered in place without JS. ═══ -->
+<div class="toc" id="icindekiler" role="dialog" aria-modal="true" aria-labelledby="toc-title">
   <div class="toc__in">
-    <h2 class="toc__title" id="toc-title" aria-label="İÇİNDEKİLER">
-      <span class="i-heart" aria-hidden="true">I</span><span aria-hidden="true">ÇİNDEKİLER</span>
-    </h2>
+    <button class="toc__close mono" type="button" data-toc-close>kapat <span aria-hidden="true">✕</span></button>
+    <h2 class="toc__title" id="toc-title"><span class="sr">İçindekiler</span><span aria-hidden="true"><span class="i-heart">I</span>çindekiler</span></h2>
     <p class="toc__sub mono">kabın içinde ne var</p>
 
-    <ol class="toc__ch">
-      <li><a href="#kapak"><b>KAP<em>AK</em></b><span class="mono">01 · açılış</span></a></li>
-      <li><a href="#kap"><b>KAP</b><span class="mono">02 · kaplar</span></a></li>
-      <li><a href="#kapris"><b>KAP<em>RİS</em></b><span class="mono">03 · ekler</span></a></li>
-      <li><a href="#kapis"><b>KAP<em>IŞ KAPIŞ</em></b><span class="mono">04 · kova waffle</span></a></li>
-      <li><a href="#kapak-olsun"><b>KAP<em>AK OLSUN</em></b><span class="mono">05 · pasta</span></a></li>
-      <li><a href="#kapi"><b>KAP<em>I</em></b><span class="mono">06 · şubeler</span></a></li>
-      <li><a href="#kap-emir"><b>KAP<em>!</em></b><span class="mono">07 · hemen</span></a></li>
-    </ol>
-
-    <div class="toc__menu">
-      <h3 class="mono">menü</h3>
-      <dl>
-        <div><dt>Kap tatlı</dt><dd>günlük, kapta</dd></div>
-        <div><dt>Ekler</dt><dd>çilek, fıstık, bitter, frambuaz ve günün kaprisi</dd></div>
-        <div><dt>Dondurma</dt><dd>top top, kapta</dd></div>
-        <div><dt>Magnolya</dt><dd>kat kat</dd></div>
-        <div><dt>Kova Waffle Menü</dt><dd>250₺ · Siyah &amp; Beyaz da var</dd></div>
-        <div><dt>Özel gün pastası</dt><dd>DM'den sipariş</dd></div>
-        <div><dt>Paket servis</dt><dd>DM'den sor</dd></div>
-      </dl>
+    <div class="toc__now">
+      <p class="toc__nowline" data-toc-nowline>Gebze'de iki kapı.</p>
+      <a class="sleeve__row sleeve__row--go" data-open-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=Cupistan%2C%20%C4%B0lyas%20Uzuner%20Cd.%20No%3A15%2FA%2C%20Gebze%2C%20Kocaeli" target="_blank" rel="noopener"><small class="mono" data-open-label>yol tarifi · Osman Yılmaz</small><b data-open-text>Yol tarifi</b><i aria-hidden="true">↗</i></a>
+      <a class="sleeve__row" href="https://ig.me/m/cupistantr" target="_blank" rel="noopener"><small class="mono">paket servis · pasta siparişi</small><b>DM at</b><i aria-hidden="true">→</i></a>
     </div>
 
     <div class="toc__doors">
       <h3 class="mono">kapılar</h3>
-      <p><b>Çarşı</b> <span class="mono">Hacıhalil · 12:30–21:30</span> <span class="toc__now" data-toc-now="carsi"></span></p>
-      <p><b>Osman Yılmaz</b> <span class="mono">İlyas Uzuner Cd. 15/A · 10:00–01:00 · Cu–Ct 02:00</span> <span class="toc__now" data-toc-now="oy"></span></p>
-      <p class="toc__links"><a href="https://ig.me/m/cupistantr" target="_blank" rel="noopener">DM at</a> <a href="https://www.instagram.com/cupistantr/" target="_blank" rel="noopener">@cupistantr</a></p>
+      <div class="toc__door"><b>Çarşı</b><span>Hacıhalil Çarşı · 12:30–21:30</span><span class="toc__live" data-toc-now="carsi"></span><a data-maps="carsi" href="https://www.google.com/maps/dir/?api=1&amp;destination=Cupistan%2C%20Hac%C4%B1halil%20%C3%87ar%C5%9F%C4%B1%2C%20Gebze%2C%20Kocaeli" target="_blank" rel="noopener">yol tarifi ↗</a></div>
+      <div class="toc__door"><b>Osman Yılmaz</b><span>İlyas Uzuner Cd. 15/A · 10:00–01:00, cuma ve cumartesi 02:00</span><span class="toc__live" data-toc-now="oy"></span><a data-maps="oy" href="https://www.google.com/maps/dir/?api=1&amp;destination=Cupistan%2C%20%C4%B0lyas%20Uzuner%20Cd.%20No%3A15%2FA%2C%20Gebze%2C%20Kocaeli" target="_blank" rel="noopener">yol tarifi ↗</a></div>
     </div>
+
+    <div class="toc__menu">
+      <h3 class="mono">menü</h3>
+      <dl>
+        <div><dt>Kap tatlı</dt><dd>kapta, kat kat</dd></div>
+        <div><dt>Magnolya</dt><dd>kaşıkla</dd></div>
+        <div><dt>Ekler</dt><dd>renk renk, vitrinde ne varsa</dd></div>
+        <div><dt>Dondurma</dt><dd>top top</dd></div>
+        <div><dt>Kova Waffle Menü</dt><dd>250₺ · Siyah &amp; Beyaz da var</dd></div>
+        <div><dt>Özel gün pastası</dt><dd><a href="https://ig.me/m/cupistantr" target="_blank" rel="noopener">DM'den sipariş</a></dd></div>
+        <div><dt>Paket servis</dt><dd><a href="https://ig.me/m/cupistantr" target="_blank" rel="noopener">DM'den sor</a></dd></div>
+      </dl>
+    </div>
+
+    <nav class="toc__ch" aria-label="Bölümler">
+      <h3 class="mono">KAP sözlüğü</h3>
+      <ol>
+        <li><a href="#kapak"><b>KAP<em>AK</em></b><span class="mono">01 · açılış</span></a></li>
+        <li><a href="#kap"><b>KAP</b><span class="mono">02 · kaplar</span></a></li>
+        <li><a href="#kapris"><b>KAP<em>RİS</em></b><span class="mono">03 · ekler</span></a></li>
+        <li><a href="#kapis"><b>KAP<em>IŞ KAPIŞ</em></b><span class="mono">04 · kova waffle</span></a></li>
+        <li><a href="#kapak-olsun"><b>KAP<em>AK OLSUN</em></b><span class="mono">05 · pasta</span></a></li>
+        <li><a href="#kapi"><b>KAP<em>I</em></b><span class="mono">06 · şubeler</span></a></li>
+        <li><a href="#kap-emir"><b>KAP<em>!</em></b><span class="mono">07 · hemen</span></a></li>
+      </ol>
+    </nav>
   </div>
 </div>
 
-<!-- shared drawing: the cup's outline (used as vessel frames) -->
+<!-- shared drawing: the cup's outline (vessel frames) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <g id="cup-line" fill="none" stroke="#66604D" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-      <path d="M146,36 C196,24 200,114 140,106" stroke-width="5"/>
-      <path d="M146,36 C196,24 200,114 140,106" stroke="#F8E3CA" stroke-width="0"/>
+      <path d="M146,36 C196,24 200,114 140,106"/>
       <path d="M8,8 L148,8 C146,62 144,110 136,130 C132,142 124,150 114,150 L42,150 C32,150 24,142 20,130 C12,110 10,62 8,8 Z"/>
     </g>
   </defs>
 </svg>
 
-<script src="assets/js/kap.js" defer></script>
+<script src="assets/js/kap.js?v=2" defer></script>
 </body>
 </html>
