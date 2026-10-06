@@ -685,6 +685,14 @@ body.is-night .m-zz { fill: var(--krema); }
 .eclair[data-eclair="2"] { --x: 38%; --y: 75.5%; }
 .eclair[data-eclair="3"] { --x: 60%; --y: 85.5%; }
 @media (max-width: 899px) { .plate { top: 70%; } }
+/* short phones: land a little lower so no éclair touches the receipt */
+@media (max-width: 899px) and (max-height: 800px) {
+  .plate { top: 72%; }
+  .eclair[data-eclair="0"] { --y: 59%; }
+  .eclair[data-eclair="1"] { --y: 68%; }
+  .eclair[data-eclair="2"] { --y: 77.5%; }
+  .eclair[data-eclair="3"] { --y: 87%; }
+}
 .eclair {
   position: absolute;
   left: var(--x);

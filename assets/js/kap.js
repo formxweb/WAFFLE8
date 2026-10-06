@@ -387,7 +387,7 @@
     if (near) {
       const t = clamp((y + vh - k.top) / (k.h + vh));
       words[0].style.setProperty('--x', `${((0.5 - t) * 14).toFixed(2)}vw`);
-      words[1].style.setProperty('--x', `${((t - 0.5) * 36).toFixed(2)}vw`);
+      words[1].style.setProperty('--x', `${((t - 0.5) * 14 - 4).toFixed(2)}vw`);
       closeUp.style.setProperty('--spin', `${(t * 120).toFixed(1)}deg`);
     }
     if (reduce) return false;

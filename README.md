@@ -20,7 +20,7 @@ robots.txt  sitemap.xml  .htaccess  assets/
 - MIME türleri
 - 404 sayfası
 
-**Her yayında** `index.html` içindeki `kap.css?v=2`, `fonts.css?v=2` ve `kap.js?v=2` numaralarını bir artırın. CSS ve JS dosyaları 30 gün önbellekte kalıyor.
+**Her yayında** `index.html` içindeki `kap.css?v=3`, `fonts.css?v=3` ve `kap.js?v=3` numaralarını bir artırın. CSS ve JS dosyaları 30 gün önbellekte kalıyor.
 
 Yerelde denemek için:
 
