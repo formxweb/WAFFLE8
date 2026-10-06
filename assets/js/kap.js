@@ -155,7 +155,6 @@
   const glazes = $$('.glaze i');
   const eclairs = $$('[data-eclair]');
   const fisLines = $$('.fis__list li');
-  const kAfter = $('.kapris__after');
   const kova = $('[data-kova]');
   const words = $$('.kapis__w');
   const closeUp = $('.kapis__close');
@@ -378,7 +377,6 @@
     if (n > landedPrev && !reduce) crumbsAt(eclairs[n - 1], 0.5, 7);
     landedPrev = n;
     setGlaze(Math.max(0, n - 1));
-    kAfter.classList.toggle('on', n === 4 && pk > 0.86);
   }
 
   /* ─── KAPIŞ KAPIŞ: the bucket hangs from its handle ───────────── */
@@ -645,7 +643,6 @@
     eclairs.forEach((el) => { el.style.setProperty('--ty', '0px'); el.style.setProperty('--spin', '0deg'); });
     fisLines.forEach((l) => l.classList.add('on'));
     setGlaze(0);
-    kAfter.classList.add('on');
   } else {
     showSpine(false);
   }
