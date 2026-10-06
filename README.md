@@ -20,7 +20,7 @@ robots.txt  sitemap.xml  .htaccess  assets/
 - MIME türleri
 - 404 sayfası
 
-**Her yayında** `index.html` içindeki `kap.css?v=3`, `fonts.css?v=3` ve `kap.js?v=3` numaralarını bir artırın. CSS ve JS dosyaları 30 gün önbellekte kalıyor.
+**Her yayında** `index.html` içindeki `kap.css?v=4`, `fonts.css?v=4` ve `kap.js?v=4` numaralarını bir artırın. CSS ve JS dosyaları 30 gün önbellekte kalıyor.
 
 Yerelde denemek için:
 
@@ -31,10 +31,13 @@ npx serve .            # ya da: python3 -m http.server
 ## Kontrol
 
 ```
-node tools/check.mjs                      # etkileşim ve saat testleri (PASS/FAIL)
+node tools/check.mjs                      # etkileşim, saat ve yerleşim testleri (PASS/FAIL)
 node tools/qa.mjs out both auto           # mobil ve masaüstü ekran görüntüleri
-node tools/qa.mjs out mobile 0,50vh Europe/Istanbul
+node tools/qa.mjs out all 0               # beş ekran: mobile, tablet, laptop, desktop, wide
+node tools/qa.mjs out mobile 0,50vh Europe/Istanbul 2026-10-08T15:00:00+03:00   # saati sabitleyerek (gündüz görünümü)
 ```
+
+Saat verilmezse ekran görüntüleri o anki İstanbul saatiyle alınır; iki şube de kapalıysa açılış gece görünümünde gelir.
 
 `check.mjs` şunları test ediyor:
 
@@ -42,6 +45,8 @@ node tools/qa.mjs out mobile 0,50vh Europe/Istanbul
 - Omurgadaki eklerin üst üste binmemesi
 - Sekiz farklı saatte açık ve kapalı durum, Cuma ve Cumartesi 02:00 dahil
 - Hareket azaltma ve JavaScript'siz görünüm
+- Kısa telefonlarda (375×667, 360×640, 360×740) eklerlerin fişteki Instagram bağlantısını kapatmaması
+- 900–1920 px masaüstünde sloganın diske çarpmaması ve alttaki CUPISTAN yazısının ekrandan taşmaması
 
 ## Klasörler
 

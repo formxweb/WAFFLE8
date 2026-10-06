@@ -1,5 +1,5 @@
 /**
- * Functional checks for the interactions that broke in review.
+ * Functional checks for the interactions and layouts that broke in review.
  *   node tools/check.mjs
  * Prints PASS/FAIL lines; exits 1 on any failure.
  */
@@ -23,8 +23,9 @@ const browser = await pw.chromium.launch();
 let fails = 0;
 const ok = (cond, msg) => { console.log(`${cond ? 'PASS' : 'FAIL'}  ${msg}`); if (!cond) fails++; };
 
-async function page({ mobile = true, time, reduced = false, js = true } = {}) {
-  const ctx = await browser.newContext({ viewport: mobile ? { width: 390, height: 844 } : { width: 1440, height: 900 }, isMobile: mobile, hasTouch: mobile, timezoneId: 'Europe/Istanbul', reducedMotion: reduced ? 'reduce' : 'no-preference', javaScriptEnabled: js });
+async function page({ mobile = true, size, time, reduced = false, js = true } = {}) {
+  const viewport = size ? { width: size[0], height: size[1] } : mobile ? { width: 390, height: 844 } : { width: 1440, height: 900 };
+  const ctx = await browser.newContext({ viewport, isMobile: mobile, hasTouch: mobile, timezoneId: 'Europe/Istanbul', reducedMotion: reduced ? 'reduce' : 'no-preference', javaScriptEnabled: js });
   const pg = await ctx.newPage();
   const errors = [];
   pg.on('pageerror', (e) => errors.push(e.message));
@@ -99,6 +100,33 @@ for (const [t, label, want, text] of CASES) {
   const { ctx, pg } = await page({ mobile: true, js: false });
   const r = await pg.evaluate(() => ({ toc: getComputedStyle(document.querySelector('#icindekiler')).visibility, cup: getComputedStyle(document.querySelector('.cupbtn')).display }));
   ok(r.toc === 'visible' && r.cup === 'none', `no-JS: menu visible (${r.toc}), cup hidden (${r.cup})`);
+  await ctx.close();
+}
+
+// 5 · layout collisions found in review
+// KAPRİS: once all four éclairs have landed, the receipt's Instagram link and hint stay on top
+for (const size of [[375, 667], [360, 640], [360, 740], [390, 844]]) {
+  const { ctx, pg } = await page({ mobile: true, size });
+  const end = await pg.evaluate(() => { const k = document.querySelector('#kapris'); return k.offsetTop + k.offsetHeight - innerHeight - 40; });
+  for (let y = end - 1500; y <= end; y += 250) { await pg.evaluate((yy) => scrollTo({ top: yy, behavior: 'instant' }), y); await pg.waitForTimeout(60); }
+  await pg.waitForTimeout(900);
+  const r = await pg.evaluate(() => ['.fis__total a', '.fis__hint'].map((q) => {
+    const b = document.querySelector(q).getBoundingClientRect();
+    return !document.elementFromPoint(b.left + b.width / 2, b.top + b.height / 2)?.closest('.eclair');
+  }));
+  ok(r.every(Boolean), `${size.join('×')}: éclairs leave the receipt's link and hint uncovered`);
+  await ctx.close();
+}
+// desktop opening: the slogan clears the disc; the footer wordmark stays inside the screen
+for (const size of [[900, 600], [1024, 700], [1280, 720], [1440, 900], [1920, 1080]]) {
+  const { ctx, pg } = await page({ mobile: false, size });
+  const r = await pg.evaluate(() => {
+    const sl = document.querySelector('.kapak__sl').getBoundingClientRect();
+    const disc = document.querySelector('.kapak__disc').getBoundingClientRect();
+    const mark = document.querySelector('.band__mark > [aria-hidden]').getBoundingClientRect();
+    return { gap: Math.round(disc.left - sl.right), over: Math.round(mark.right - document.documentElement.clientWidth) };
+  });
+  ok(r.gap > 0 && r.over <= -16, `${size.join("×")}: slogan clears the disc (${r.gap}px), footer CUPISTAN clears the edge (${-r.over}px)`);
   await ctx.close();
 }
 

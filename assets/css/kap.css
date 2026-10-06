@@ -101,7 +101,7 @@ body[data-chapter="kapis"] :focus-visible, .ink-light :focus-visible { outline-c
   content: '';
   position: absolute;
   left: 50%;
-  top: .17em;
+  top: .24em; /* Coiny's I starts .31em down a line-height:1 box: this leaves the gap İ leaves above its dot */
   width: .4em;
   height: .36em;
   transform: translate(-50%, -100%) rotate(-8deg);
@@ -488,7 +488,7 @@ body.is-night[data-chapter="kapak"] .spine { --ink: var(--krema); --accent: var(
   position: absolute;
   z-index: 3;
   right: var(--gutter);
-  bottom: calc(var(--mw) * 0.9 + 100lvh - 100svh);
+  bottom: calc(var(--mw) * 0.76 + 100lvh - 100svh);
   margin: 0;
   max-width: 11ch;
   text-align: right;
@@ -620,6 +620,7 @@ body.is-night .m-zz { fill: var(--krema); }
 .vessel--2 .vessel__name { color: var(--adacayi-koyu); }
 .vessel--3 { --w: 124vw; --tilt: -4deg; margin: 9vh 0 0 5vw; }
 .vessel--3 figcaption { padding-left: var(--gutter); }
+.vessel--3 .vessel__no { left: .5%; } /* this cup runs off the right edge: number on the side that stays */
 .vessel--3 .vessel__name { color: var(--cilek-ink); }
 
 /* ═══ 03 · KAPRİS: the vitrine plate ══════════════════════════════ */
@@ -684,14 +685,25 @@ body.is-night .m-zz { fill: var(--krema); }
 .eclair[data-eclair="1"] { --x: 61%; --y: 65.5%; }
 .eclair[data-eclair="2"] { --x: 38%; --y: 75.5%; }
 .eclair[data-eclair="3"] { --x: 60%; --y: 85.5%; }
-@media (max-width: 899px) { .plate { top: 70%; } }
-/* short phones: land a little lower so no éclair touches the receipt */
-@media (max-width: 899px) and (max-height: 800px) {
-  .plate { top: 72%; }
-  .eclair[data-eclair="0"] { --y: 59%; }
-  .eclair[data-eclair="1"] { --y: 68%; }
-  .eclair[data-eclair="2"] { --y: 77.5%; }
-  .eclair[data-eclair="3"] { --y: 87%; }
+@media (max-width: 899px) {
+  .plate { top: 70%; }
+  .fis { z-index: 5; } /* a landing éclair may tuck under the receipt, never cover its link */
+}
+/* short phones (SE, 360×640…): the receipt takes half the screen, so the pile lands lower,
+   smaller, and leans right where the receipt is not */
+@media (max-width: 899px) and (max-height: 799px) {
+  .fis { width: min(70vw, 330px); padding: 10px 13px 16px; }
+  .fis__word { font-size: 30px; }
+  .fis__def { margin-bottom: 6px; font-size: 13.5px; }
+  .fis__list { padding-top: 6px; }
+  .fis__list li { padding: 1px 0; }
+  .fis__total { margin-top: 4px; padding-top: 4px; }
+  .fis__hint { margin-top: 4px; }
+  .eclair { width: 62vw; }
+  .eclair[data-eclair="0"] { --x: 60%; --y: 68.5%; }
+  .eclair[data-eclair="1"] { --x: 44%; --y: 75.5%; }
+  .eclair[data-eclair="2"] { --x: 60%; --y: 82.5%; }
+  .eclair[data-eclair="3"] { --x: 44%; --y: 89.5%; }
 }
 .eclair {
   position: absolute;
@@ -1081,9 +1093,8 @@ body.is-night .m-zz { fill: var(--krema); }
 .sleeve { display: grid; max-width: 760px; }
 .band .sleeve__row { border-color: var(--zeytin); }
 .band__mark { margin: clamp(50px, 8vh, 90px) 0 0; white-space: nowrap; font-family: var(--f-display); font-size: clamp(48px, 15.2vw, 210px); line-height: .9; color: var(--kopuk); text-shadow: 0 5px 0 var(--zeytin); padding-top: .2em; }
-.band__mark .i-heart::before { top: .06em; }
 .band__sl { margin: 12px 0 0; font-style: italic; font-size: 1.1em; }
-.band__info { display: flex; flex-wrap: wrap; gap: 4px 18px; list-style: none; padding: 0; margin: 18px 0 0; }
+.band__info { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; list-style: none; padding: 0; margin: 18px 0 0; }
 .band__info a { display: inline-flex; align-items: center; min-height: 44px; }
 
 /* ═══ İÇİNDEKİLER ════════════════════════════════════════════════ */
@@ -1112,7 +1123,7 @@ html:not(.js) .toc__close, html:not(.js) .cupbtn { display: none; }
   background: var(--bitter);
   color: var(--krema);
 }
-.toc__title { margin: 0; font-family: var(--f-display); font-size: clamp(46px, 12.5vw, 140px); line-height: 1; padding-top: .22em; }
+.toc__title { margin: 0; font-family: var(--f-display); font-size: clamp(46px, 12.5vw, 140px); line-height: 1; padding: .22em 0 .2em; } /* bottom: room for the ç tail (Coiny's line box ends at the baseline) */
 .toc__sub { margin: 14px 0 0; color: var(--zeytin); }
 .toc__now { margin-top: 28px; display: grid; max-width: 640px; }
 .toc__nowline { margin: 0 0 14px; font-style: italic; font-size: clamp(22px, 1vw + 17px, 30px); line-height: 1.2; font-variation-settings: 'SOFT' 100, 'WONK' 1; }
@@ -1143,16 +1154,23 @@ html:not(.js) .toc__close, html:not(.js) .cupbtn { display: none; }
   .mono { font-size: 12.5px; }
 
   /* opening: a poster. The cup stands in front of its own name. */
-  .kapak__stage { --mw: min(44vw, 72svh); }
+  /* the cup's disc must clear the slogan on its left: 50vw - .75mw >= gutter + slogan + gap */
+  .kapak__stage { --mw: min(44vw, 72svh, calc(56vw - var(--gutter) * 1.333 - 96px)); }
+  .kapak__mascot { z-index: 3; } /* the cup stands in front of its own name */
   .kapak__top { top: calc(var(--safe-top) + 13svh); }
-  .wm { font-size: min(15.6vw, 30svh); }
+  /* the name sits right on the cup's heart, whatever the aspect ratio: the wordmark's baseline
+     (.95em into its line box) lands where the heart's top is (.959 of the cup up from the bottom) */
+  .wm {
+    --fs: min(15.6vw, 30svh);
+    font-size: var(--fs);
+    margin-top: calc(max(var(--safe-top) + 40px, 100svh - var(--mw) * .959 - var(--fs) * .95 + 6px) - var(--safe-top) - 13svh);
+  }
   .kapak__sl, .kapak__status { position: absolute; }
   .kapak__sl { left: 0; top: calc(100svh - 13svh - var(--safe-top) - 30svh); max-width: min(15vw, 230px); font-size: clamp(20px, 1.15vw + 8px, 28px); }
   .kapak__sl .hinge { display: block; }
-  .kapak__status { right: 0; top: calc(100svh - 13svh - var(--safe-top) - 40svh); margin: 0; max-width: 17vw; flex-wrap: wrap; }
-  .kapak__cue { bottom: calc(var(--mw) * 0.9); }
+  .kapak__status { right: 0; top: calc(100svh - 13svh - var(--safe-top) - 40svh); margin: 0; max-width: max(17vw, 220px); }
   .kapak__mascot { bottom: calc(var(--mw) * -0.02); }
-  .kapak__cue { right: var(--gutter); bottom: calc(var(--mw) * 0.62); max-width: 14ch; }
+  .kapak__cue { right: var(--gutter); bottom: calc(40svh + 18px); max-width: 14ch; } /* right above the status line */
 
   .entry { display: grid; grid-template-columns: max-content minmax(28ch, 1fr); column-gap: 5vw; align-items: end; }
   .entry__word { grid-row: span 2; font-size: min(26vw, 340px); }
@@ -1206,7 +1224,7 @@ html:not(.js) .toc__close, html:not(.js) .cupbtn { display: none; }
 
   .band { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: 6vw; align-items: end; }
   .sleeve { grid-column: 1; grid-row: 1 / 4; }
-  .band__mark { grid-column: 2; grid-row: 1; margin: 0; font-size: clamp(60px, 7.4vw, 140px); }
+  .band__mark { grid-column: 2; grid-row: 1; margin: 0; font-size: clamp(54px, 6.4vw, 140px); } /* CUPISTAN is 5.3em wide: this keeps it inside its 5/12 column */
   .band__sl { grid-column: 2; grid-row: 2; }
   .band__info { grid-column: 2; grid-row: 3; }
 

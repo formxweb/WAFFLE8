@@ -119,3 +119,15 @@ Gerilim, şişkin hamur harfleriyle ince fiş yazısının çarpışmasından ge
 - Fotoğraflar daha yüksek çözünürlükte yeniden kırpıldı. Kova artık gerçekten waffle gösteriyor. Kaşık arka planından ayrıldı. Fotoğraf yazının üstüne binmiyor.
 - Hatalar düzeltildi: omurganın Ş harfini kesmesi, hızlı kaydırmada eklerin üst üste binmesi, ilk ekranda okunamayan durum satırı, masaüstünde 250₺'nin kırpılması, odak tuzağı ve kontrast.
 - Yazı tipleri 584 KB'tan 162 KB'a indi.
+
+## 10. Düzeltme turu
+
+Site beş ekran genişliğinde (360'tan 1920 piksele), gündüz ve gece saatinde baştan sona tarandı. Düzeltilenler:
+
+- Masaüstü açılışta isim artık kabın kalbinin hemen üstüne oturuyor, kap da adının önünde duruyor. Önceden S harfi kalbin yarısını kesiyordu. Hesap her ekran oranında tutuyor.
+- 900–1200 px ekranlarda slogan diske çarpıyordu, durum etiketi üç satıra bölünüp "kaydır" ipucunun üstüne biniyordu. Disk sloganı hesaba katarak küçülüyor, ipucu durum satırının hemen üstünde.
+- Kısa telefonlarda (iPhone SE, 360×640) inen ekler fişin alt kısmını, Instagram bağlantısını ve "dokun" ipucunu kapatıyordu. Bu ekranlarda fiş biraz sıkışık basılıyor, ekler daha küçük ve fişin altına iniyor. Telefonda fiş her zaman eklerin üstünde.
+- Alt banttaki CUPISTAN masaüstünde sağ kenardan taşıyordu. Artık kendi sütununa sığıyor. İ'nin kalbi harften kopuk havada duruyordu, Türkçe İ'nin noktası nerede duruyorsa oraya indi (İçindekiler ve KAPRİS'te de).
+- İçindekiler başlığında ve 404 sayfasında ç ve ş kuyrukları alt satıra biniyordu.
+- Tablette "kaydır, kapağı kaldır" ipucunun üstünden diskin çizgisi geçiyordu.
+- "kap 03" etiketi kabıyla birlikte ekran dışında kalıyordu, kabın görünen tarafına geçti.

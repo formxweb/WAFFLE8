@@ -1,7 +1,8 @@
 /**
  * Visual QA: serves the site, captures frames at given scroll depths.
- *   node tools/qa.mjs [outDir] [mobile|desktop|both] [y1,y2,...|auto]
+ *   node tools/qa.mjs [outDir] [mobile|tablet|laptop|desktop|wide|both|all] [y1,y2,...|auto] [timezone] [ISO time]
  * "auto" captures every 0.5 viewport down the full page.
+ * The ISO time (e.g. 2026-10-08T15:00:00+03:00) starts the page clock there, to check the open, closed and night states.
  * Prints console errors, failed requests and horizontal overflow.
  * Uses the globally installed Playwright (PLAYWRIGHT_BROWSERS_PATH).
  */
@@ -26,16 +27,21 @@ const server = http.createServer(async (req, res) => {
 await new Promise((r) => server.listen(0, r));
 const base = `http://localhost:${server.address().port}/`;
 
-const [,, out = 'qa-out', which = 'both', ys = 'auto', tz = 'Europe/Istanbul'] = process.argv;
+const [,, out = 'qa-out', which = 'both', ys = 'auto', tz = 'Europe/Istanbul', at] = process.argv;
 await mkdir(out, { recursive: true });
 const DEVICES = {
   mobile: { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
+  tablet: { viewport: { width: 768, height: 1024 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true },
+  laptop: { viewport: { width: 1024, height: 700 }, deviceScaleFactor: 1 },
   desktop: { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 },
+  wide: { viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 },
 };
+const GROUPS = { both: ['mobile', 'desktop'], all: Object.keys(DEVICES) };
 const browser = await pw.chromium.launch();
-for (const name of which === 'both' ? ['mobile', 'desktop'] : [which]) {
+for (const name of GROUPS[which] || which.split(',')) {
   const ctx = await browser.newContext({ ...DEVICES[name], timezoneId: tz });
   const page = await ctx.newPage();
+  if (at) await page.clock.install({ time: new Date(at) });
   const errors = [];
   page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') errors.push(`${m.type()}: ${m.text()}`); });
   page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
